@@ -82,6 +82,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="input-group input-group-sm mb-2 mt-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" />
+                                    <label class="form-check-label" >Aplicar capitalización de interés cada 6 meses.</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -144,9 +150,15 @@
                                 <label aria-placeholder="#.##"></label>
                             </div>
                             <div class="input-group input-group-sm mb-2 mt-2">
-                                <span class="input-group-text">Fecha</span>
-                                <input type="date" class="form-control" id="fecha" disabled/>                                
+                                <span class="input-group-text">Fecha corte</span>
+                                <input type="date" class="form-control" id="fecha-corte" disabled/> 
+                                <div class="input-group input-group-sm mb-2 mt-2">
+                                    <span class="input-group-text">Fecha retorno</span>
+                                    <input type="date" class="form-control" id="fecha-retorno" disabled/>                                
+                                </div>                               
                             </div>
+                            
+                            
                             <div class="input-group input-group-sm mb-2 mt-2">
                                 <span class="input-group-text">Imputación</span>
                                 <select class="form-select" id="imputacion" disabled>
@@ -184,7 +196,8 @@
             const interesCheckbox = document.getElementById('interesCheckbox');
             const tipoDescuento = document.getElementById('tipoDescuento');
             const monto = document.getElementById('monto');
-            const fecha = document.getElementById('fecha');
+            const fechaCorte = document.getElementById('fecha-corte');
+            const fechaRetorno = document.getElementById('fecha-retorno');
             const imputacion = document.getElementById('imputacion');
 
             // Function to enable/disable fields based on checkbox status
@@ -193,7 +206,8 @@
                 interesCheckbox.disabled = !isChecked;
                 tipoDescuento.disabled = !isChecked;
                 monto.disabled = !isChecked;
-                fecha.disabled = !isChecked;
+                fechaCorte.disabled = !isChecked;
+                fechaRetorno.disabled = !isChecked;
                 imputacion.disabled = !isChecked;
             }
 
